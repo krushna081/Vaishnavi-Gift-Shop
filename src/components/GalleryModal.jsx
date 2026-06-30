@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, ChevronLeft, ChevronRight, Image as ImageIcon } from "lucide-react";
 
 export default function GalleryModal({ item, onClose, onPrev, onNext }) {
+  const [imgError, setImgError] = useState(false);
+
   if (!item) return null;
 
   const handleBackdropClick = (e) => {
@@ -27,21 +30,31 @@ export default function GalleryModal({ item, onClose, onPrev, onNext }) {
             className="relative max-w-3xl w-full"
           >
             <div className="relative rounded-2xl overflow-hidden bg-dark-maroon/30 border border-gold/10">
-              <div className="aspect-[4/3] bg-gradient-to-br from-dark-maroon/50 to-gold/10 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-gold/30 to-gold/5 flex items-center justify-center mb-4">
-                    <span className="font-heading text-3xl font-bold text-gold">
-                      {item.category.charAt(0)}
+              {!imgError ? (
+                <img
+                  src={item.src}
+                  alt={item.alt}
+                  className="w-full max-h-[70vh] object-contain"
+                  onError={() => setImgError(true)}
+                />
+              ) : (
+                <div className="aspect-[4/3] bg-gradient-to-br from-dark-maroon/50 to-gold/10 flex items-center justify-center">
+                  <div className="text-center p-8">
+                    <div className="w-24 h-24 mx-auto rounded-2xl bg-gradient-to-br from-gold/30 to-gold/5 flex items-center justify-center mb-4">
+                      <ImageIcon size={36} className="text-gold/50" />
+                    </div>
+                    <h3 className="font-heading text-2xl font-semibold text-gold mb-2">
+                      {item.alt}
+                    </h3>
+                    <span className="inline-block px-4 py-1.5 rounded-full bg-gold/10 text-gold text-xs font-body font-medium border border-gold/20">
+                      {item.category}
                     </span>
+                    <p className="text-cream/40 text-xs font-body mt-3">
+                      Add image at: {item.src}
+                    </p>
                   </div>
-                  <h3 className="font-heading text-2xl font-semibold text-gold mb-2">
-                    {item.alt}
-                  </h3>
-                  <span className="inline-block px-4 py-1.5 rounded-full bg-gold/10 text-gold text-xs font-body font-medium border border-gold/20">
-                    {item.category}
-                  </span>
                 </div>
-              </div>
+              )}
             </div>
 
             <button

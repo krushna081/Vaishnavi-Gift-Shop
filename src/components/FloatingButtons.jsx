@@ -1,7 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
-import { shopInfo } from "../data";
+import { business } from "../data/business";
 
 export default function FloatingButtons() {
   const [showScroll, setShowScroll] = useState(false);
@@ -19,7 +19,7 @@ export default function FloatingButtons() {
   return (
     <div className="fixed bottom-20 lg:bottom-6 right-4 sm:right-6 z-50 flex flex-col items-center gap-3">
       <motion.a
-        href={`https://wa.me/91${shopInfo.phone}`}
+        href={`https://wa.me/91${business.phone}`}
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg shadow-green-500/30 hover:shadow-xl hover:shadow-green-500/40 transition-all duration-300"
@@ -33,7 +33,7 @@ export default function FloatingButtons() {
       </motion.a>
 
       <motion.a
-        href={`tel:+91${shopInfo.phone}`}
+        href={`tel:+91${business.phone}`}
         className="w-14 h-14 rounded-full bg-gold flex items-center justify-center shadow-lg shadow-gold/30 hover:shadow-xl hover:shadow-gold/40 transition-all duration-300"
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}

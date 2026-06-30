@@ -1,7 +1,8 @@
 import { motion } from "framer-motion";
 import { Phone, MapPin, Heart } from "lucide-react";
 import { FaInstagram } from "react-icons/fa";
-import { shopInfo, allServices } from "../data";
+import { allServices } from "../data";
+import { business } from "../data/business";
 
 export default function Footer() {
   const handleClick = (href) => {
@@ -31,21 +32,21 @@ export default function Footer() {
           >
             <div className="flex items-center gap-3 mb-3">
               <img
-                src="/images/logo.jpg"
-                alt={shopInfo.name}
+                src="/images/logo/logo.jpg"
+                alt={business.shopName}
                 className="h-12 w-12 rounded-full object-cover border-2 border-gold/30"
                 onError={(e) => { e.target.style.display = "none" }}
               />
               <h3 className="font-heading text-2xl font-bold text-gold">
-                {shopInfo.name}
+                {business.shopName}
               </h3>
             </div>
             <p className="text-cream/60 text-sm font-body leading-relaxed mb-4">
-              {shopInfo.tagline}
+              {business.tagline}
             </p>
             <div className="flex items-center gap-3">
               <motion.a
-                href={`https://wa.me/91${shopInfo.phone}`}
+                href={`https://wa.me/91${business.phone}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold hover:bg-gold hover:text-dark-maroon transition-all duration-300"
@@ -56,7 +57,7 @@ export default function Footer() {
                 </svg>
               </motion.a>
               <motion.a
-                href={shopInfo.instagram}
+                href={business.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center text-gold hover:bg-gold hover:text-dark-maroon transition-all duration-300"
@@ -121,19 +122,19 @@ export default function Footer() {
             </h4>
             <div className="space-y-3">
               <a
-                href={`tel:+91${shopInfo.phone}`}
+                href={`tel:+91${business.phone}`}
                 className="flex items-center gap-3 text-cream/50 hover:text-gold transition-colors duration-300 text-sm font-body group"
               >
                 <span className="w-8 h-8 rounded-full bg-gold/5 flex items-center justify-center text-gold group-hover:bg-gold/20 transition-all duration-300 flex-shrink-0">
                   <Phone size={14} />
                 </span>
-                +91 {shopInfo.phone}
+                +91 {business.phone}
               </a>
               <div className="flex items-start gap-3 text-cream/50 text-sm font-body">
                 <span className="w-8 h-8 rounded-full bg-gold/5 flex items-center justify-center text-gold flex-shrink-0 mt-0.5">
                   <MapPin size={14} />
                 </span>
-                {shopInfo.location}
+                {business.address}
               </div>
             </div>
           </motion.div>
@@ -147,7 +148,7 @@ export default function Footer() {
           className="mt-12 pt-8 border-t border-gold/10 flex flex-col sm:flex-row items-center justify-between gap-4"
         >
           <p className="text-cream/40 text-xs font-body">
-            &copy; {new Date().getFullYear()} {shopInfo.name}. All rights reserved.
+            &copy; {new Date().getFullYear()} {business.shopName}. All rights reserved.
           </p>
           <p className="text-cream/30 text-xs font-body flex items-center gap-1">
             Made with <Heart size={12} className="text-red-400" /> by{" "}
@@ -159,7 +160,7 @@ export default function Footer() {
             >
               Krushna Jadhav
             </a>
-            {" "}&bull; Owned by {shopInfo.owner}
+            {" "}&bull; Owned by {business.owner}
           </p>
         </motion.div>
       </div>

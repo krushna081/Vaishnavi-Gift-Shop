@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Image, Gift, Flower2, MessageCircle } from "lucide-react";
-import { shopInfo } from "../data";
+import { business } from "../data/business";
 
 const quickActions = [
   {
@@ -35,7 +35,7 @@ const quickActions = [
     border: "border-gold/20",
     iconColor: "text-gold",
     isLink: true,
-    link: `https://wa.me/91${shopInfo.phone}`,
+    link: `https://wa.me/91${business.phone}`,
   },
 ];
 

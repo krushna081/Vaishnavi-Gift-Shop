@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { shopInfo } from "../data";
+import { business } from "../data/business";
 
 export default function About() {
   return (
@@ -59,13 +59,13 @@ export default function About() {
 
             <div className="space-y-4 text-cream/60 text-sm sm:text-base font-body leading-relaxed">
               <p>
-                {shopInfo.name} specializes in premium frames, gift hampers, customized gifts, bouquets, and memorable products for every occasion.
+                {business.shopName} specializes in premium frames, gift hampers, customized gifts, bouquets, and memorable products for every occasion.
               </p>
               <p>
-                Founded by <span className="text-gold font-medium">{shopInfo.owner}</span>, we are dedicated to providing high-quality products that capture life&apos;s most precious moments. From elegant photo frames to luxurious gift hampers, every product is crafted with love and attention to detail.
+                Founded by <span className="text-gold font-medium">{business.owner}</span>, we are dedicated to providing high-quality products that capture life&apos;s most precious moments. From elegant photo frames to luxurious gift hampers, every product is crafted with love and attention to detail.
               </p>
               <p>
-                Located at {shopInfo.location}, we serve customers across the region with fast delivery and personalized service.
+                Located at {business.address}, we serve customers across the region with fast delivery and personalized service.
               </p>
             </div>
 

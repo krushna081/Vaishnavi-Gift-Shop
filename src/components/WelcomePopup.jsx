@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Image, Gift, Flower2, MessageCircle } from "lucide-react";
-import { shopInfo } from "../data";
+import { business } from "../data/business";
 
 function randomDelay() {
   return 20000 + Math.floor(Math.random() * 10000);
@@ -99,7 +99,7 @@ export default function WelcomePopup() {
               </div>
 
               <a
-                href={`https://wa.me/91${shopInfo.phone}`}
+                href={`https://wa.me/91${business.phone}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full flex items-center justify-center gap-2 py-3.5 rounded-xl bg-green-500 text-white font-body font-semibold text-sm transition-all duration-300 hover:bg-green-600"

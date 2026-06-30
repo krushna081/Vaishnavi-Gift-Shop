@@ -1,11 +1,13 @@
+import { business } from "./business";
+
 export const shopInfo = {
-  name: "Vaishnavi Gift Shop",
-  owner: "Sainath Bidve",
-  phone: "7420982782",
-  location: "Shinde Gaon, Naigaon Road",
-  tagline: "We Make Every Memory Beautiful",
-  email: "",
-  instagram: "https://www.instagram.com/sainath_bidve_official_4520?igsh=MWRlemlqb2s0MnZ3MA==",
+  name: business.shopName,
+  owner: business.owner,
+  phone: business.phone,
+  location: business.address,
+  tagline: business.tagline,
+  email: business.email,
+  instagram: business.instagram,
 };
 
 export const navLinks = [
@@ -32,19 +34,23 @@ export const services = [
 
 export const galleryCategories = ["All", "Frames", "Hampers", "Bouquets", "Gifts"];
 
+/*
+  Gallery items pull from product images.
+  Add/remove items to showcase your work.
+*/
 export const galleryItems = [
-  { id: 1, src: "/images/gallery/frame1.jpg", alt: "Photo Frame", category: "Frames" },
-  { id: 2, src: "/images/gallery/frame2.jpg", alt: "Family Frame", category: "Frames" },
-  { id: 3, src: "/images/gallery/frame3.jpg", alt: "Certificate Frame", category: "Frames" },
-  { id: 4, src: "/images/gallery/hamper1.jpg", alt: "Gift Hamper", category: "Hampers" },
-  { id: 5, src: "/images/gallery/hamper2.jpg", alt: "Premium Hamper", category: "Hampers" },
-  { id: 6, src: "/images/gallery/bouquet1.jpg", alt: "Chocolate Bouquet", category: "Bouquets" },
-  { id: 7, src: "/images/gallery/bouquet2.jpg", alt: "Flower Bouquet", category: "Bouquets" },
-  { id: 8, src: "/images/gallery/gift1.jpg", alt: "Customized Gift", category: "Gifts" },
-  { id: 9, src: "/images/gallery/gift2.jpg", alt: "Anniversary Gift", category: "Gifts" },
-  { id: 10, src: "/images/gallery/gift3.jpg", alt: "Birthday Gift", category: "Gifts" },
-  { id: 11, src: "/images/gallery/frame4.jpg", alt: "Baby Frame", category: "Frames" },
-  { id: 12, src: "/images/gallery/hamper3.jpg", alt: "Birthday Hamper", category: "Hampers" },
+  { id: 1, src: "/images/frames/frame1.jpg", alt: "Photo Frame", category: "Frames" },
+  { id: 2, src: "/images/frames/frame2.jpg", alt: "Family Frame", category: "Frames" },
+  { id: 3, src: "/images/frames/frame3.jpg", alt: "Certificate Frame", category: "Frames" },
+  { id: 4, src: "/images/hampers/hamper1.jpg", alt: "Gift Hamper", category: "Hampers" },
+  { id: 5, src: "/images/hampers/hamper2.jpg", alt: "Premium Hamper", category: "Hampers" },
+  { id: 6, src: "/images/bouquets/bouquet1.jpg", alt: "Chocolate Bouquet", category: "Bouquets" },
+  { id: 7, src: "/images/bouquets/bouquet2.jpg", alt: "Flower Bouquet", category: "Bouquets" },
+  { id: 8, src: "/images/gifts/gift1.jpg", alt: "Customized Gift", category: "Gifts" },
+  { id: 9, src: "/images/gifts/gift2.jpg", alt: "Anniversary Gift", category: "Gifts" },
+  { id: 10, src: "/images/gifts/gift3.jpg", alt: "Birthday Gift", category: "Gifts" },
+  { id: 11, src: "/images/frames/frame5.jpg", alt: "Baby Frame", category: "Frames" },
+  { id: 12, src: "/images/hampers/hamper3.jpg", alt: "Birthday Hamper", category: "Hampers" },
 ];
 
 export const whyChooseUs = [

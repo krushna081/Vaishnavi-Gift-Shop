@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Phone, MapPin, MessageCircle, Clock, Send } from "lucide-react";
-import { shopInfo } from "../data";
+import { business } from "../data/business";
 
 export default function Contact() {
   return (
@@ -46,7 +46,7 @@ export default function Contact() {
 
               <div className="space-y-5">
                 <a
-                  href={`tel:+91${shopInfo.phone}`}
+                  href={`tel:+91${business.phone}`}
                   className="flex items-center gap-4 group"
                 >
                   <div className="w-12 h-12 rounded-xl bg-gold/10 flex items-center justify-center group-hover:bg-gold/20 transition-all duration-300">
@@ -55,7 +55,7 @@ export default function Contact() {
                   <div>
                     <p className="text-cream/40 text-xs font-body uppercase tracking-wider">Phone</p>
                     <p className="text-cream font-body text-sm sm:text-base font-medium">
-                      +91 {shopInfo.phone}
+                      +91 {business.phone}
                     </p>
                   </div>
                 </a>
@@ -67,7 +67,7 @@ export default function Contact() {
                   <div>
                     <p className="text-cream/40 text-xs font-body uppercase tracking-wider">Location</p>
                     <p className="text-cream font-body text-sm sm:text-base font-medium">
-                      {shopInfo.location}
+                      {business.address}
                     </p>
                   </div>
                 </div>
@@ -78,9 +78,9 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="text-cream/40 text-xs font-body uppercase tracking-wider">Hours</p>
-                    <p className="text-cream font-body text-sm sm:text-base font-medium">
-                      10:00 AM - 8:00 PM
-                    </p>
+                      <p className="text-cream font-body text-sm sm:text-base font-medium">
+                        {business.workingHours}
+                      </p>
                   </div>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function Contact() {
 
             <div className="flex flex-col sm:flex-row gap-4">
               <motion.a
-                href={`tel:+91${shopInfo.phone}`}
+                href={`tel:+91${business.phone}`}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 className="flex-1 flex items-center justify-center gap-2 px-6 py-3.5 rounded-full bg-gold text-dark-maroon font-body font-semibold text-sm hover:bg-gold-light transition-all duration-300 shadow-lg shadow-gold/20"
@@ -98,7 +98,7 @@ export default function Contact() {
               </motion.a>
 
               <motion.a
-                href={`https://wa.me/91${shopInfo.phone}`}
+                href={`https://wa.me/91${business.phone}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02 }}

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { MessageCircle, Eye, Phone, MapPin } from "lucide-react";
-import { shopInfo } from "../data";
+import { business } from "../data/business";
 
 export default function Hero() {
   const handleScroll = (id) => {
@@ -35,14 +35,14 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
         >
           <img
-            src="/images/logo.jpg"
-            alt={shopInfo.name}
+            src="/images/logo/logo.jpg"
+            alt={business.shopName}
             className="h-16 w-16 sm:h-20 sm:w-20 rounded-full object-cover border-2 border-gold/30 mx-auto mb-4"
             onError={(e) => { e.target.style.display = "none" }}
           />
 
           <span className="inline-block px-4 py-1.5 rounded-full border border-gold/20 bg-gold/10 text-gold text-xs font-body font-medium tracking-wider uppercase mb-3">
-            {shopInfo.name}
+            {business.shopName}
           </span>
         </motion.div>
 
@@ -89,7 +89,7 @@ export default function Hero() {
 
           <div className="grid grid-cols-2 gap-3 w-full">
             <a
-              href={`https://wa.me/91${shopInfo.phone}`}
+              href={`https://wa.me/91${business.phone}`}
               target="_blank"
               rel="noopener noreferrer"
               className="h-[50px] flex items-center justify-center gap-2 rounded-full bg-green-500 text-white font-body font-semibold text-sm transition-all duration-300"
@@ -99,7 +99,7 @@ export default function Hero() {
             </a>
 
             <a
-              href={`tel:+91${shopInfo.phone}`}
+              href={`tel:+91${business.phone}`}
               className="h-[50px] flex items-center justify-center gap-2 rounded-full border font-body font-semibold text-sm transition-all duration-300 text-cream"
               style={{ borderColor: "rgba(212, 175, 55, 0.3)" }}
             >
@@ -113,7 +113,7 @@ export default function Hero() {
             className="flex items-center gap-1.5 text-cream/50 hover:text-gold transition-colors duration-300 text-xs font-body mt-1"
           >
             <MapPin size={12} />
-            {shopInfo.location}
+            {business.address}
           </button>
         </motion.div>
       </div>

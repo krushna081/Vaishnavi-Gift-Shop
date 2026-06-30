@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, Minus, Plus, ShoppingBag } from "lucide-react";
-import { shopInfo } from "../data";
+import { business } from "../data/business";
 
 const QUANTITY_OPTIONS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
@@ -22,10 +22,12 @@ export default function OrderModal({ product, onClose }) {
       ? `\nName: ${customerName.trim()}`
       : "";
 
+    const customMsg = product.whatsappMessage || `I want to order ${product.name}.`;
+
     return [
-      `Hello ${shopInfo.name},`,
+      `Hello ${business.shopName},`,
       "",
-      "I would like to order:",
+      customMsg,
       "",
       `Product: ${product.name}`,
       `Size: ${selectedSize}`,
@@ -38,7 +40,7 @@ export default function OrderModal({ product, onClose }) {
   const handleOrder = () => {
     const message = generateMessage();
     const encoded = encodeURIComponent(message);
-    window.open(`https://wa.me/91${shopInfo.phone}?text=${encoded}`, "_blank");
+    window.open(`https://wa.me/91${business.phone}?text=${encoded}`, "_blank");
     setShowSuccess(true);
     setTimeout(() => {
       onClose();

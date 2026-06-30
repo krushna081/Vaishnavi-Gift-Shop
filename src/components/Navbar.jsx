@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Phone, ShoppingBag } from "lucide-react";
-import { navLinks, shopInfo } from "../data";
+import { Menu, X, Phone } from "lucide-react";
+import { navLinks } from "../data";
+import { business } from "../data/business";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,17 +40,17 @@ export default function Navbar() {
               whileHover={{ scale: 1.02 }}
             >
               <img
-                src="/images/logo.jpg"
-                alt={shopInfo.name}
+                src="/images/logo/logo.jpg"
+                alt={business.shopName}
                 className="h-8 w-8 lg:h-10 lg:w-10 rounded-full object-cover border-2 border-gold/30"
                 onError={(e) => { e.target.style.display = "none" }}
               />
               <div className="hidden xs:block">
                 <h1 className="font-heading text-lg lg:text-2xl font-bold text-gold leading-tight">
-                  {shopInfo.name}
+                  {business.shopName}
                 </h1>
                 <p className="text-[9px] lg:text-xs text-cream/70 font-body -mt-0.5 leading-tight">
-                  {shopInfo.tagline}
+                  {business.tagline}
                 </p>
               </div>
             </motion.button>
@@ -70,7 +71,7 @@ export default function Navbar() {
 
             <div className="flex items-center gap-2">
               <motion.a
-                href={`https://wa.me/91${shopInfo.phone}`}
+                href={`https://wa.me/91${business.phone}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 whileTap={{ scale: 0.9 }}
@@ -115,13 +116,13 @@ export default function Navbar() {
               <div className="flex flex-col h-full pt-20 pb-8">
                 <div className="px-6 mb-6">
                   <img
-                    src="/images/logo.jpg"
-                    alt={shopInfo.name}
+                    src="/images/logo/logo.jpg"
+                    alt={business.shopName}
                     className="h-14 w-14 rounded-full object-cover border-2 border-gold/30 mx-auto mb-3"
                     onError={(e) => { e.target.style.display = "none" }}
                   />
                   <h2 className="font-heading text-xl font-bold text-gold text-center">
-                    {shopInfo.name}
+                    {business.shopName}
                   </h2>
                 </div>
 
@@ -143,7 +144,7 @@ export default function Navbar() {
                 <div className="px-6 pt-4 border-t border-gold/10">
                   <div className="flex gap-3">
                     <a
-                      href={`https://wa.me/91${shopInfo.phone}`}
+                      href={`https://wa.me/91${business.phone}`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-green-500 text-white font-body text-sm font-semibold"
@@ -154,7 +155,7 @@ export default function Navbar() {
                       WhatsApp
                     </a>
                     <a
-                      href={`tel:+91${shopInfo.phone}`}
+                      href={`tel:+91${business.phone}`}
                       className="flex-1 flex items-center justify-center gap-2 py-3 rounded-xl bg-gold text-dark-maroon font-body text-sm font-semibold"
                     >
                       <Phone size={16} />

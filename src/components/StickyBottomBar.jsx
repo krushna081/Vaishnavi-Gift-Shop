@@ -1,11 +1,11 @@
 import { MessageCircle, Phone, MapPin, ShoppingBag } from "lucide-react";
-import { shopInfo } from "../data";
+import { business } from "../data/business";
 
 const bottomItems = [
   {
     label: "WhatsApp",
     icon: MessageCircle,
-    href: `https://wa.me/91${shopInfo.phone}`,
+    href: `https://wa.me/91${business.phone}`,
     color: "text-green-400",
     bg: "bg-green-500",
     isExternal: true,
@@ -13,7 +13,7 @@ const bottomItems = [
   {
     label: "Call",
     icon: Phone,
-    href: `tel:+91${shopInfo.phone}`,
+    href: `tel:+91${business.phone}`,
     color: "text-gold",
     bg: "bg-gold",
     isExternal: true,
@@ -47,7 +47,7 @@ export default function StickyBottomBar() {
     <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden">
       <div className="bg-dark-maroon/98 backdrop-blur-xl border-t border-gold/10 safe-bottom">
         <div className="grid grid-cols-4 gap-0">
-          {bottomItems.map((item, i) => {
+          {bottomItems.map((item) => {
             const Icon = item.icon;
 
             if (item.isExternal) {

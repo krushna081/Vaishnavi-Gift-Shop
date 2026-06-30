@@ -1,7 +1,10 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ShoppingBag, Sparkles } from "lucide-react";
 
 export default function ProductCard({ product, index, onOrder }) {
+  const [imgError, setImgError] = useState(false);
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -13,14 +16,23 @@ export default function ProductCard({ product, index, onOrder }) {
     >
       <div className="relative aspect-[4/3] bg-gradient-to-br from-dark-maroon/50 via-dark-maroon/30 to-gold/5 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(212,175,55,0.08),transparent_70%)]" />
-        <div className="text-center z-10">
-          <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-500">
-            <ShoppingBag size={32} className="text-gold" />
+        {product.image && !imgError ? (
+          <img
+            src={product.image}
+            alt={product.name}
+            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+            onError={() => setImgError(true)}
+          />
+        ) : (
+          <div className="text-center z-10">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 mx-auto rounded-2xl bg-gradient-to-br from-gold/20 to-gold/5 border border-gold/20 flex items-center justify-center mb-3 group-hover:scale-110 transition-transform duration-500">
+              <ShoppingBag size={32} className="text-gold" />
+            </div>
+            <span className="text-cream/40 text-xs font-body uppercase tracking-wider">
+              {product.category}
+            </span>
           </div>
-          <span className="text-cream/40 text-xs font-body uppercase tracking-wider">
-            {product.category}
-          </span>
-        </div>
+        )}
 
         {product.popular && (
           <div className="absolute top-3 right-3">
