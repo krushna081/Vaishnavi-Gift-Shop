@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FloatingButtons from "./components/FloatingButtons";
@@ -34,6 +35,7 @@ function App() {
       <StickyBottomBar />
       <FloatingButtons />
       <WelcomePopup />
+      <Analytics />
     </div>
   );
 }
