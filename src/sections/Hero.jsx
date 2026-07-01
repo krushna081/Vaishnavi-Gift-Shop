@@ -14,7 +14,15 @@ export default function Hero() {
       className="relative flex items-center justify-center"
       style={{ minHeight: "70vh" }}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-dark-maroon/90 via-[#1A000A] to-dark-maroon/80" />
+      <div className="absolute inset-0">
+        <img
+          src="/images/hero/hero1.jpeg"
+          alt=""
+          className="w-full h-full object-cover"
+          onError={(e) => { e.target.style.display = "none" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-dark-maroon/85 via-[#1A000A]/85 to-dark-maroon/85" />
+      </div>
 
       <div
         className="absolute inset-0 opacity-[0.03]"

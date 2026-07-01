@@ -39,18 +39,18 @@ export const galleryCategories = ["All", "Frames", "Hampers", "Bouquets", "Gifts
   Add/remove items to showcase your work.
 */
 export const galleryItems = [
-  { id: 1, src: "/images/frames/frame1.jpg", alt: "Photo Frame", category: "Frames" },
-  { id: 2, src: "/images/frames/frame2.jpg", alt: "Family Frame", category: "Frames" },
-  { id: 3, src: "/images/frames/frame3.jpg", alt: "Certificate Frame", category: "Frames" },
-  { id: 4, src: "/images/hampers/hamper1.jpg", alt: "Gift Hamper", category: "Hampers" },
-  { id: 5, src: "/images/hampers/hamper2.jpg", alt: "Premium Hamper", category: "Hampers" },
-  { id: 6, src: "/images/bouquets/bouquet1.jpg", alt: "Chocolate Bouquet", category: "Bouquets" },
-  { id: 7, src: "/images/bouquets/bouquet2.jpg", alt: "Flower Bouquet", category: "Bouquets" },
-  { id: 8, src: "/images/gifts/gift1.jpg", alt: "Customized Gift", category: "Gifts" },
-  { id: 9, src: "/images/gifts/gift2.jpg", alt: "Anniversary Gift", category: "Gifts" },
-  { id: 10, src: "/images/gifts/gift3.jpg", alt: "Birthday Gift", category: "Gifts" },
-  { id: 11, src: "/images/frames/frame5.jpg", alt: "Baby Frame", category: "Frames" },
-  { id: 12, src: "/images/hampers/hamper3.jpg", alt: "Birthday Hamper", category: "Hampers" },
+  { id: 1, src: "/images/frames/frame1.jpeg", alt: "Photo Frame", category: "Frames" },
+  { id: 2, src: "/images/frames/frame2.jpeg", alt: "Family Frame", category: "Frames" },
+  { id: 3, src: "/images/frames/frame3.jpeg", alt: "Certificate Frame", category: "Frames" },
+  { id: 4, src: "/images/hampers/hamper1.jpeg", alt: "Gift Hamper", category: "Hampers" },
+  { id: 5, src: "/images/hampers/hamper2.jpeg", alt: "Premium Hamper", category: "Hampers" },
+  { id: 6, src: "/images/bouquets/bouquet1.jpeg", alt: "Chocolate Bouquet", category: "Bouquets" },
+  { id: 7, src: "/images/bouquets/bouquet2.jpeg", alt: "Flower Bouquet", category: "Bouquets" },
+  { id: 8, src: "/images/gifts/gift1.jpeg", alt: "Customized Gift", category: "Gifts" },
+  { id: 9, src: "/images/gifts/gift2.jpeg", alt: "Anniversary Gift", category: "Gifts" },
+  { id: 10, src: "/images/gifts/gift3.jpeg", alt: "Birthday Gift", category: "Gifts" },
+  { id: 11, src: "/images/frames/frame5.jpeg", alt: "Baby Frame", category: "Frames" },
+  { id: 12, src: "/images/hampers/hamper3.jpeg", alt: "Birthday Hamper", category: "Hampers" },
 ];
 
 export const whyChooseUs = [
